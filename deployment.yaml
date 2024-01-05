@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: webserver-simple
-        image: docker.io/ekalaya/gosampleapp:38
+        image: docker.io/ekalaya/gosampleapp:39
         ports:
         - containerPort: 8081
