@@ -3,10 +3,17 @@ kind: Service
 metadata:
   name: sample-service
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: sample-go-web-app
   ports:
-  - nodePort: 31000
+  - name: http
     protocol: TCP
-    port: 8081
+    port: 80
+    targetPort: 8081
+    nodePort: 32509
+  - name: https
+    protocol: TCP
+    port: 443
+    targetPort: 8081
+    nodePort: 30846
